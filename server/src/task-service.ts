@@ -4,6 +4,7 @@ export type Task = {
   id: number;
   title: string;
   done: boolean;
+  description: string;
 };
 
 class TaskService {
@@ -38,13 +39,34 @@ class TaskService {
    *
    * Resolves the newly created task id.
    */
-  create(title: string) {
+  create(title: string, description: string) {
     return new Promise<number>((resolve, reject) => {
-      pool.query('INSERT INTO Tasks SET title=?', [title], (error, results) => {
-        if (error) return reject(error);
+      pool.query(
+        'INSERT INTO Tasks SET title=?, description=?',
+        [title, description],
+        (error, results) => {
+          if (error) return reject(error);
 
-        resolve(Number(results.insertId));
-      });
+          resolve(Number(results.insertId));
+        }
+      );
+    });
+  }
+
+  /**
+   * Update given task.
+   */
+  update(task: Task) {
+    return new Promise<void>((resolve, reject) => {
+      pool.query(
+        'UPDATE Tasks SET title=?, description=?, done=? WHERE id=?',
+        [task.title, task.description, task.done, task.id],
+        (error, _results) => {
+          if (error) return reject(error);
+
+          resolve();
+        }
+      );
     });
   }
 
