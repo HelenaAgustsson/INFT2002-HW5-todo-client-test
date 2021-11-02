@@ -49,6 +49,10 @@ export class TaskDetails extends Component<{ match: { params: { id: number } } }
       <>
         <Card title="Task">
           <Row>
+            <Column width={2}>ID:</Column>
+            <Column>{this.task.id}</Column>
+          </Row>
+          <Row>
             <Column width={2}>Title:</Column>
             <Column>{this.task.title}</Column>
           </Row>
@@ -59,7 +63,7 @@ export class TaskDetails extends Component<{ match: { params: { id: number } } }
           <Row>
             <Column width={2}>Done:</Column>
             <Column>
-              <Form.Checkbox checked={this.task.done} onChange={() => {}} disabled />
+              <Form.Checkbox checked={this.task.done} onChange={() => {}} />
             </Column>
           </Row>
         </Card>
@@ -84,7 +88,7 @@ export class TaskDetails extends Component<{ match: { params: { id: number } } }
  * Renders form to edit a specific task.
  */
 export class TaskEdit extends Component<{ match: { params: { id: number } } }> {
-  task: Task = { id: 0, title: '', done: false, description: '' };
+  task: Task = { id: 0, title: '', description: '', done: false };
 
   render() {
     return (

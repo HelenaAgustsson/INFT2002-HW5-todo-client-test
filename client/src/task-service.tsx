@@ -42,6 +42,12 @@ class TaskService {
   update(task: Task) {
     return axios.put('/tasks', task).then((response) => response.data.id);
   }
+  /**
+   * Delete task with given id.
+   */
+  delete(id: number) {
+    return axios.delete('/tasks/' + id).then((response) => response.data);
+  }
 }
 
 const taskService = new TaskService();

@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Task components test TaskDetails draws correctly (using snapshot) 1`] = `
+<Fragment>
+  <Card
+    title="Task"
+  >
+    <Row>
+      <Column
+        width={2}
+      >
+        ID:
+      </Column>
+      <Column>
+        0
+      </Column>
+    </Row>
+    <Row>
+      <Column
+        width={2}
+      >
+        Title:
+      </Column>
+      <Column />
+    </Row>
+    <Row>
+      <Column
+        width={2}
+      >
+        Description:
+      </Column>
+      <Column />
+    </Row>
+    <Row>
+      <Column
+        width={2}
+      >
+        Done:
+      </Column>
+      <Column>
+        <FormCheckbox
+          checked={false}
+          onChange={[Function]}
+        />
+      </Column>
+    </Row>
+  </Card>
+  <ButtonSuccess
+    onClick={[Function]}
+  >
+    Edit
+  </ButtonSuccess>
+</Fragment>
+`;
+
+exports[`TaskDetails test TaskDetails draws correctly (using snapshot) 1`] = `
+<Fragment>
+  <Card
+    title="Task"
+  >
+    <Row>
+      <Column
+        width={2}
+      >
+        ID:
+      </Column>
+      <Column>
+        0
+      </Column>
+    </Row>
+    <Row>
+      <Column
+        width={2}
+      >
+        Title:
+      </Column>
+      <Column />
+    </Row>
+    <Row>
+      <Column
+        width={2}
+      >
+        Description:
+      </Column>
+      <Column />
+    </Row>
+    <Row>
+      <Column
+        width={2}
+      >
+        Done:
+      </Column>
+      <Column>
+        <FormCheckbox
+          checked={false}
+          onChange={[Function]}
+        />
+      </Column>
+    </Row>
+  </Card>
+  <ButtonSuccess
+    onClick={[Function]}
+  >
+    Edit
+  </ButtonSuccess>
+</Fragment>
+`;
