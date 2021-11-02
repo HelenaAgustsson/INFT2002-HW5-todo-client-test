@@ -21,8 +21,6 @@ router.get('/tasks/:id', (request, response) => {
     .catch((error) => response.status(500).send(error));
 });
 
-// Example request body: { title: "Ny oppgave", description: "Ny beskrivelse" }
-// Example response body: { id: 4 }
 router.post('/tasks', (request, response) => {
   const data = request.body;
   if (
@@ -37,7 +35,6 @@ router.post('/tasks', (request, response) => {
   else response.status(400).send('Missing task title');
 });
 
-// Example request body: { id: 4, title: "Ny oppgave", description: "Ny beskrivelse", done: true }
 router.put('/tasks', (request, response) => {
   const data = request.body;
   if (
